@@ -11,7 +11,6 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ./Example/Example
   
 
     steps:
@@ -22,10 +21,13 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: ls -a && dotnet restore
+      working-directory: ./Example
     - name: Build
       run: dotnet build --no-restore
+      working-directory: ./Example
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: ./Example
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.5
       with:
