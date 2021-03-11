@@ -10,7 +10,7 @@ namespace Example.Tests
         
         public UserLogicTest()
         {
-            _userLogic = new UserLogic(new UserRepository(), new NullPasswordGenerator(), new NullPasswordHasher());
+            _userLogic = new UserLogic(new UserRepository(), new NullPasswordGenerator(), new NullPasswordHasher(), new AesTransformer());
         }
         
         
@@ -19,7 +19,8 @@ namespace Example.Tests
         {
             User user = new()
             {
-                Email = "info@example.com"
+                Email = "info@example.com",
+                Secret = "secret"
             };
 
             bool created = _userLogic.Create(user);
@@ -27,6 +28,9 @@ namespace Example.Tests
             Assert.True(created);
             
             Assert.True(user.Id != Guid.Empty);
+            Assert.NotNull(user.Secret);
+            Assert.NotEmpty(user.Secret);
+            Assert.NotEqual("secret", user.Secret);
             Assert.NotNull(user.Password);
             Assert.NotNull(user.Salt);
         }
@@ -36,7 +40,8 @@ namespace Example.Tests
         {
             User user = new()
             {
-                Email = "exists@example.com"
+                Email = "exists@example.com",
+                Secret = "secret"
             };
 
             bool created = _userLogic.Create(user);

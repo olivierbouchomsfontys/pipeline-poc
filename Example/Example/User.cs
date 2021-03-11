@@ -11,5 +11,11 @@ namespace Example
         public string Password { get; set; }
         
         public string Salt { get; set; }
+        
+        public string Secret { get; set; }
+        
+        public string SecretKey { get; set; }
+        
+        public string SecretIv { get; set; }
     }
 }
