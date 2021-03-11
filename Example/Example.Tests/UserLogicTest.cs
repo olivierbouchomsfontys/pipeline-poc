@@ -33,6 +33,8 @@ namespace Example.Tests
             Assert.NotEqual("secret", user.Secret);
             Assert.NotNull(user.Password);
             Assert.NotNull(user.Salt);
+            Assert.NotEmpty(user.SecretIv);
+            Assert.NotNull(user.SecretKey);
         }
 
         [Fact]

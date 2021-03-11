@@ -6,7 +6,7 @@ namespace Example
 {
     public class UserRepository : IUserRepository
     {
-        private ICollection<User> _users;
+        private readonly ICollection<User> _users;
 
         public UserRepository()
         {
@@ -22,12 +22,12 @@ namespace Example
         
         public bool IsGuidAvailable(Guid guid)
         {
-            return !_users.Any(c => c.Id == guid);
+            return _users.All(c => c.Id != guid);
         }
 
         public bool IsEmailAvailable(string email)
         {
-            return !_users.Any(c => c.Email == email);
+            return _users.All(c => c.Email != email);
         }
 
         public bool Create(User user)
