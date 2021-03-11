@@ -32,3 +32,4 @@ jobs:
         projectBaseDir: ./Example
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
