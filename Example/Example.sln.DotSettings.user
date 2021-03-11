@@ -3,5 +3,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::7F8A5887-5B39-45CD-A6D7-23CBEBF2C450::.NETCoreApp,Version=v3.1::Example.Tests.UserLogicTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::7F8A5887-5B39-45CD-A6D7-23CBEBF2C450::.NETCoreApp,Version=v3.1::Example.Tests.AesTransformerTest.IntegrationTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7F8A5887-5B39-45CD-A6D7-23CBEBF2C450::.NETCoreApp,Version=v3.1::Example.Tests.CommandExecutorTests.TestCommandExecutor&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
