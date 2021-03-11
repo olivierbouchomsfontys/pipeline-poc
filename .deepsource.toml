@@ -1,0 +1,19 @@
+version = 1
+
+test_patterns = ["e2e/**"]
+
+exclude_patterns = ["/dist/*.min.js"]
+
+[[analyzers]]
+name = "docker"
+enabled = true
+
+[[analyzers]]
+name = "javascript"
+enabled = true
+
+  [analyzers.meta]
+  environment = ["browser"]
+  plugins = ["react"]
+  dialect = "typescript"
+  style_guide = "google"
