@@ -9,6 +9,7 @@ namespace Example.Extensions
         /// <summary>
         /// Writes a UTF8 string to a CryptoStream, flushes the data and closes the stream.
         /// </summary>
+        /// <param name="cryptoStream">CryptoStream</param>
         /// <param name="input">UTF8 string</param>
         public static void WriteUtf8String(this CryptoStream cryptoStream, string input)
         {
@@ -22,6 +23,7 @@ namespace Example.Extensions
         /// <summary>
         /// Writes a Base64 string to a CryptoStream, flushes the data and closes the stream.
         /// </summary>
+        /// <param name="cryptoStream">CryptoStream</param>
         /// <param name="input">Base64 string</param>
         public static void WriteBase64String(this CryptoStream cryptoStream, string input)
         {

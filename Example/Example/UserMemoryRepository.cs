@@ -10,14 +10,16 @@ namespace Example
 
         public UserRepository()
         {
-            _users = new List<User>();
-            _users.Add(new User
+            _users = new List<User>
             {
-                Id = Guid.Parse("B243192F-372D-4261-8107-C05A0A983961"),
-                Email = "exists@example.com",
-                Password = "password",
-                Salt = "salt"
-            });
+                new()
+                {
+                    Id = Guid.Parse("B243192F-372D-4261-8107-C05A0A983961"),
+                    Email = "exists@example.com",
+                    Password = "password",
+                    Salt = "salt"
+                }
+            };
         }
         
         public bool IsGuidAvailable(Guid guid)

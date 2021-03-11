@@ -8,9 +8,19 @@ namespace Example
 {
     public class AesTransformer : ITransformer
     {
+        private const int KeySize = 256;
+        private const int BlockSize = 128;
+        
         public string Encrypt(string input, out string key, out string iv)
         {
-            Aes aes = Aes.Create();
+            Aes aes = new AesManaged
+            {
+                KeySize = KeySize,
+                BlockSize = BlockSize
+            };
+            
+            aes.GenerateKey();
+            aes.GenerateIV();
 
             key = Convert.ToBase64String(aes.Key);
             iv = Convert.ToBase64String(aes.IV);
@@ -32,8 +42,8 @@ namespace Example
         {
             Aes aes = new AesManaged();
             
-            aes.BlockSize = 128;
-            aes.KeySize = 256;
+            aes.KeySize = KeySize;
+            aes.BlockSize = BlockSize;
 
             aes.Key = Convert.FromBase64String(key);
             aes.IV = Convert.FromBase64String(iv);
