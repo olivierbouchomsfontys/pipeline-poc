@@ -53,7 +53,7 @@ namespace Example
             return Sanitize(user);
         }
 
-        private User Sanitize(User user)
+        private static User Sanitize(User user)
         {
             user.Password = null;
             user.Salt = null;
