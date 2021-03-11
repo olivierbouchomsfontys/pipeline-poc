@@ -8,6 +8,8 @@ namespace Example
 {
     public class AesTransformer : ITransformer
     {
+        private object obj;
+
         public string Encrypt(string input, out string key, out string iv)
         {
             Aes aes = Aes.Create();

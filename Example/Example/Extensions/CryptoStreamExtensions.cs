@@ -7,10 +7,9 @@ namespace Example.Extensions
     public static class CryptoStreamExtensions
     {
         /// <summary>
-        /// Writes a string to a CryptoStream and flushes the data
+        /// Writes a UTF8 string to a CryptoStream, flushes the data and closes the stream.
         /// </summary>
-        /// <param name="cryptoStream"></param>
-        /// <param name="input"></param>
+        /// <param name="input">UTF8 string</param>
         public static void WriteUtf8String(this CryptoStream cryptoStream, string input)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(input);
@@ -20,6 +19,10 @@ namespace Example.Extensions
             cryptoStream.Close();
         }
 
+        /// <summary>
+        /// Writes a Base64 string to a CryptoStream, flushes the data and closes the stream.
+        /// </summary>
+        /// <param name="input">Base64 string</param>
         public static void WriteBase64String(this CryptoStream cryptoStream, string input)
         {
             byte[] bytes = Convert.FromBase64String(input);
