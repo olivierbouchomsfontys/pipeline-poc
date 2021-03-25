@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 3.1.407
     - name: Restore dependencies
-      run: ls -a && dotnet restore
+      run: dotnet restore
       working-directory: ./Example
     - name: Build
       run: dotnet build --no-restore
